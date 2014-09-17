@@ -29,5 +29,9 @@ grails.project.dependency.resolution = {
         compile ':biomart-domain:1.2.2-SNAPSHOT'
         //// already included in biomart-domain
         //compile ':transmart-java:1.2.2-SNAPSHOT'
+
+        // support for static code analysis
+        compile ":codenarc:0.21"
+
     }
 }
