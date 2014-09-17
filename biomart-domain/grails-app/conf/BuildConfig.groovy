@@ -35,3 +35,12 @@ grails.project.dependency.resolution = {
     }
 
 }
+
+
+codenarc.reports = {
+    TransmartAppReport('html') {
+        outputFile = 'CodeNarc-biomart-domain-plugin-Report.html'
+        title = 'Report for transmart-extensions/biomart-domain'
+    }
+}
+

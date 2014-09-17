@@ -35,3 +35,12 @@ grails.project.dependency.resolution = {
 
     }
 }
+
+
+codenarc.reports = {
+    TransmartAppReport('html') {
+        outputFile = 'CodeNarc-search-domain-Report.html'
+        title = 'Report for transmart-extensions/search-domain'
+    }
+}
+
