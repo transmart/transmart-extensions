@@ -84,6 +84,7 @@ class GeneSignature implements Cloneable, IDomainExcelWorkbook {
     CellLine experimentTypeCellLine
     String experimentTypeInVivoDescr
     String experimentTypeATCCRef
+	Long flankingRegion = 0L
 
     static hasMany = [geneSigItems: GeneSignatureItem]
 
@@ -136,6 +137,7 @@ class GeneSignature implements Cloneable, IDomainExcelWorkbook {
             experimentTypeCellLine column: 'EXPERIMENT_TYPE_CELL_LINE_ID', lazy: false
             experimentTypeInVivoDescr column: 'EXPERIMENT_TYPE_IN_VIVO_DESCR'
             experimentTypeATCCRef column: 'EXPERIMENT_TYPE_ATCC_REF'
+			flankingRegion column:'FLANKING_REGION'
         }
     }
 
@@ -172,6 +174,7 @@ class GeneSignature implements Cloneable, IDomainExcelWorkbook {
         experimentTypeCellLine(nullable: true)
         experimentTypeInVivoDescr(nullable: true, maxSize: 255)
         experimentTypeATCCRef(nullable: true, maxSize: 255)
+		flankingRegion(nullable:true)
     }
 
     /**
@@ -270,6 +273,7 @@ class GeneSignature implements Cloneable, IDomainExcelWorkbook {
         params.put("modifiedByAuthUser.id", modifiedByAuthUser?.id)
         params.put("lastUpdated", lastUpdated)
         params.put("versionNumber", versionNumber)
+		params.put("flankingRegion",flankingRegion)
         return params;
     }
 
@@ -319,6 +323,7 @@ class GeneSignature implements Cloneable, IDomainExcelWorkbook {
         gs.modifiedByAuthUser = modifiedByAuthUser
         gs.lastUpdated = lastUpdated
         gs.versionNumber = versionNumber
+		gs.flankingRegion=flankingRegion
     }
 
     /**
